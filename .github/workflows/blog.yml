@@ -1,0 +1,44 @@
+name: Build Blog
+
+on:
+  push:
+    branches: [ main ]
+    paths: 
+      - 'blogs/**/*.md'
+      - 'blog-template.html'
+      - 'scripts/build-blog.js'
+  workflow_dispatch: # Allows manual trigger
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  build-blog:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        
+    - name: Install dependencies
+      run: |
+        npm init -y
+        npm install marked gray-matter fs-extra glob
+        
+    - name: Build blog posts
+      run: node scripts/build-blog.js
+      
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add .
+        git diff --staged --quiet || git commit -m "Auto-update blog posts [skip ci]"
+        git push
