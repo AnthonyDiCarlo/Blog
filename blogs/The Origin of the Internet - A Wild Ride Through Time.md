@@ -1,10 +1,12 @@
----
-tags:
-  - Blog
-created: August 21st 2025
-Author: Anthony Di Carlo
----
+yaml
 
+```yaml
+---
+title: "{{title}}"
+date: "{{date:YYYY-MM-DD}}"
+author: "Anthony Di Carlo"
+---
+```
 ---
 # The Origin of the Internet - A Wild Ride Through Time
 
