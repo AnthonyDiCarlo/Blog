@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="blog-style.css">
+  <title>{{title}} - Thinking out Loud</title>
+</head>
+<body>
+<!-- Fixed Navigation -->
+<div class="nav-container">
+  <nav class="nav">
+    <a href="index.html" class="nav-brand">
+      <h1>Thinking out Loud</h1>
+    </a>
+    <div class="nav-links">
+      <a href="index.html#about" class="nav-link">About Me</a>
+      <a href="index.html#blog" class="nav-link">Blog</a>
+      <a href="index.html#subscribe" class="nav-link">Subscribe</a>
+    </div>
+  </nav>
+</div>
+
+<!-- Main Content -->
+<main class="main-content">
+  <a href="index.html" class="back-button">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.42-1.41L7.83 13H20v-2z"/>
+    </svg>
+    Back to Blog
+  </a>
+
+  <article class="blog-post">
+    <header class="post-header">
+      <h1 class="post-title">{{title}}</h1>
+      <div class="post-meta">by {{author}} • {{readTime}}</div>
+      <div class="post-date">{{date}}</div>
+    </header>
+
+    <div class="post-content">
+      {{content}}
+    </div>
+  </article>
+</main>
+</body>
+</html>
