@@ -2,12 +2,11 @@
 tags:
   - Blog
 title: The Origin of the Internet - A Wild Ride Through Time
-date: August 21st 2025
+date: 18/02/2025
 author: Anthony Di Carlo
 Read Time: 4 Minutes
 ---
 
----
 # The Origin of the Internet - A Wild Ride Through Time
 
 Ah, the Internet! The magical place where cat videos thrive, social media rants never end, and you can order a pizza without speaking to a human. But where did it all begin? Was it some genius' master plan, or did it evolve from sheer necessity?
