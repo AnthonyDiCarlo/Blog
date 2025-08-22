@@ -15,7 +15,8 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #000511 0%, #001122 35%, #002244 70%, #000817 100%) fixed;
+            background: linear-gradient(135deg, #000511 0%, #001122 35%, #002244 70%, #000817 100%);
+            background-attachment: fixed;
             min-height: 100vh;
             color: #ffffff;
             overflow-x: hidden;
@@ -30,19 +31,19 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: 
-                radial-gradient(1px 1px at 180px 120px, rgba(255, 255, 255, 0.6), transparent),
-                radial-gradient(1px 1px at 320px 280px, rgba(255, 255, 255, 0.4), transparent),
-                radial-gradient(1px 1px at 580px 150px, rgba(255, 255, 255, 0.7), transparent),
-                radial-gradient(1px 1px at 120px 350px, rgba(255, 255, 255, 0.5), transparent),
-                radial-gradient(1px 1px at 750px 320px, rgba(255, 255, 255, 0.6), transparent),
-                radial-gradient(1px 1px at 450px 80px, rgba(255, 255, 255, 0.5), transparent),
-                radial-gradient(1px 1px at 680px 240px, rgba(255, 255, 255, 0.4), transparent),
-                radial-gradient(1px 1px at 220px 180px, rgba(255, 255, 255, 0.6), transparent),
-                radial-gradient(1px 1px at 820px 100px, rgba(255, 255, 255, 0.7), transparent),
-                radial-gradient(1px 1px at 90px 250px, rgba(255, 255, 255, 0.5), transparent),
-                radial-gradient(1px 1px at 520px 370px, rgba(255, 255, 255, 0.4), transparent),
-                radial-gradient(1px 1px at 380px 200px, rgba(255, 255, 255, 0.6), transparent);
+            background-image:
+                    radial-gradient(1px 1px at 180px 120px, rgba(255, 255, 255, 0.6), transparent),
+                    radial-gradient(1px 1px at 320px 280px, rgba(255, 255, 255, 0.4), transparent),
+                    radial-gradient(1px 1px at 580px 150px, rgba(255, 255, 255, 0.7), transparent),
+                    radial-gradient(1px 1px at 120px 350px, rgba(255, 255, 255, 0.5), transparent),
+                    radial-gradient(1px 1px at 750px 320px, rgba(255, 255, 255, 0.6), transparent),
+                    radial-gradient(1px 1px at 450px 80px, rgba(255, 255, 255, 0.5), transparent),
+                    radial-gradient(1px 1px at 680px 240px, rgba(255, 255, 255, 0.4), transparent),
+                    radial-gradient(1px 1px at 220px 180px, rgba(255, 255, 255, 0.6), transparent),
+                    radial-gradient(1px 1px at 820px 100px, rgba(255, 255, 255, 0.7), transparent),
+                    radial-gradient(1px 1px at 90px 250px, rgba(255, 255, 255, 0.5), transparent),
+                    radial-gradient(1px 1px at 520px 370px, rgba(255, 255, 255, 0.4), transparent),
+                    radial-gradient(1px 1px at 380px 200px, rgba(255, 255, 255, 0.6), transparent);
             background-repeat: repeat;
             background-size: 900px 400px;
             animation: starMove 12s infinite ease-in-out;
@@ -50,11 +51,11 @@
         }
 
         @keyframes starMove {
-            0%, 100% { 
+            0%, 100% {
                 opacity: 0.4;
                 transform: translateY(0px) translateX(0px);
             }
-            50% { 
+            50% {
                 opacity: 0.8;
                 transform: translateY(-10px) translateX(5px);
             }
@@ -121,9 +122,12 @@
 
         /* Main content */
         .main-content {
+            padding-top: 8rem;
             max-width: 800px;
             margin: 0 auto;
-            padding: 8rem 2rem 4rem;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            padding-bottom: 4rem;
         }
 
         /* Blog post content */
@@ -321,38 +325,38 @@
     </style>
 </head>
 <body>
-    <!-- Fixed Navigation -->
-    <div class="nav-container">
-        <nav class="nav">
-            <a href="index.html" class="nav-brand">
-                <h1>Thinking out Loud</h1>
-            </a>
-            <div class="nav-links">
-                <a href="index.html#about" class="nav-link">About Me</a>
-                <a href="index.html#blog" class="nav-link">Blog</a>
-                <a href="index.html#subscribe" class="nav-link">Subscribe</a>
-            </div>
-        </nav>
-    </div>
-
-    <!-- Main Content -->
-    <main class="main-content">
-        <a href="index.html" class="back-button">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.42-1.41L7.83 13H20v-2z"/>
-            </svg>
-            Back to Blog
+<!-- Fixed Navigation -->
+<div class="nav-container">
+    <nav class="nav">
+        <a href="index.html" class="nav-brand">
+            <h1>Thinking out Loud</h1>
         </a>
+        <div class="nav-links">
+            <a href="index.html#about" class="nav-link">About Me</a>
+            <a href="index.html#blog" class="nav-link">Blog</a>
+            <a href="index.html#subscribe" class="nav-link">Subscribe</a>
+        </div>
+    </nav>
+</div>
 
-        <article class="blog-post">
-            <header class="post-header">
-                <h1 class="post-title">Relational Logic</h1>
-                <div class="post-meta">by Anthony Di Carlo • 4 min read</div>
-                <div class="post-date">February 18th 2025</div>
-            </header>
+<!-- Main Content -->
+<main class="main-content">
+    <a href="index.html" class="back-button">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.42-1.41L7.83 13H20v-2z"/>
+        </svg>
+        Back to Blog
+    </a>
 
-            <div class="post-content">
-                <h2>The $50,000 Customer You Nearly Lost</h2>
+    <article class="blog-post">
+        <header class="post-header">
+            <h1 class="post-title">Relational Logic</h1>
+            <div class="post-meta">by Anthony Di Carlo • 4 min read</div>
+            <div class="post-date">Invalid Date</div>
+        </header>
+
+        <div class="post-content">
+            <h2>The $50,000 Customer You Nearly Lost</h2>
 <p>Tom calls your customer service line for the third time this month about delayed deliveries. Your support rep sees him as just another complaint. Meanwhile, your sales system shows he&#39;s placed 12 orders worth $50,000 in the past year. Your marketing team has him tagged as a &quot;low-engagement customer&quot; because he rarely opens emails. Three different departments, three different versions of the same customer, and not one of them has the full picture.</p>
 <p>This isn&#39;t just poor customer service, it&#39;s a fundamental business intelligence failure that&#39;s costing you serious money.</p>
 <h2>The Real Problem: You&#39;re Planting New Trees While the Ones You&#39;ve Planted Die</h2>
@@ -389,8 +393,8 @@
 <p>Your customer and order data already hold the insights you need to drive sustainable growth. The question isn&#39;t whether you have enough customers or enough orders, it&#39;s whether you&#39;re intelligent enough to connect the dots between them.</p>
 <p>Stop planting new trees. Start nurturing the forest you&#39;ve already grown.</p>
 
-            </div>
-        </article>
-    </main>
+        </div>
+    </article>
+</main>
 </body>
 </html>
