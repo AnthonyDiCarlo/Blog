@@ -2,7 +2,7 @@
 tags:
   - Business
   - Blog
-title:
+title: Relational Logic
 date: August 21st 2025
 author: Anthony Di Carlo
 Read Time: 4 Minutes
