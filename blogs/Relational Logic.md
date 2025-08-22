@@ -3,12 +3,10 @@ tags:
   - Business
   - Blog
 title: Relational Logic
-date: 21/08/2025
+date: 18/02/2025
 author: Anthony Di Carlo
 Read Time: 4 Minutes
 ---
-# Relational Logic: Why Your Business Data Silos Are Bleeding Money
-
 ## The $50,000 Customer You Nearly Lost
 
 Tom calls your customer service line for the third time this month about delayed deliveries. Your support rep sees him as just another complaint. Meanwhile, your sales system shows he's placed 12 orders worth $50,000 in the past year. Your marketing team has him tagged as a "low-engagement customer" because he rarely opens emails. Three different departments, three different versions of the same customer, and not one of them has the full picture.
