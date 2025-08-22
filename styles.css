@@ -3,7 +3,7 @@
 
 /* Force background and text colors on mobile */
 @media (max-width: 768px) {
-  body {
+  body, html {
     background: linear-gradient(135deg, #000511 0%, #001122 35%, #002244 70%, #000817 100%) fixed !important;
     color: #ffffff !important;
     min-height: 100vh !important;
