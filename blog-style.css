@@ -270,7 +270,7 @@ body::before {
 
 /* Main content */
 .main-content {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 8rem 2rem 4rem;
 }
