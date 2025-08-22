@@ -158,10 +158,10 @@ async function processBlogPost(filePath) {
     }
     
     // Convert markdown to HTML
-    const htmlContent = marked(content);
+    const htmlContent = marked(blogContent);
     
     // Calculate reading time
-    const readTime = calculateReadTime(content);
+    const readTime = calculateReadTime(blogContent);
     
     // Read template
     const template = await fs.readFile(CONFIG.templateFile, 'utf8');
@@ -190,7 +190,7 @@ async function processBlogPost(filePath) {
       author: frontmatter.author,
       readTime: readTime,
       filename: `${slug}.html`,
-      excerpt: frontmatter.excerpt || content.substring(0, 150).replace(/[#*`]/g, '').trim() + '...'
+      excerpt: frontmatter.excerpt || blogContent.substring(0, 150).replace(/[#*`]/g, '').trim() + '...'
     };
     
   } catch (error) {
