@@ -99,10 +99,10 @@ function parseObsidianFrontmatter(content) {
   
   // Extract title from first heading if not in frontmatter
   const contentLines = lines.slice(contentStartIndex);
-  const content = contentLines.join('\n').trim();
+  const markdownContent = contentLines.join('\n').trim();
   
   if (!frontmatter.title) {
-    const titleMatch = content.match(/^#\s+(.+)$/m);
+    const titleMatch = markdownContent.match(/^#\s+(.+)$/m);
     if (titleMatch) {
       frontmatter.title = titleMatch[1].trim();
     }
@@ -110,7 +110,7 @@ function parseObsidianFrontmatter(content) {
   
   return {
     frontmatter,
-    content
+    content: markdownContent
   };
 }
 
