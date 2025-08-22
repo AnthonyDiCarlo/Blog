@@ -1,3 +1,10 @@
+---
+tags:
+  - Blog
+created: August 21st 2025
+Author: Anthony Di Carlo
+Read Time:
+---
 
 ```yaml
 ---
@@ -7,7 +14,9 @@ author: "Anthony Di Carlo"
 ---
 ```
 
-# The Origin of the Internet - A Wild Ride Through Time
+
+---
+# # The Origin of the Internet - A Wild Ride Through Time
 
 Ah, the Internet! The magical place where cat videos thrive, social media rants never end, and you can order a pizza without speaking to a human. But where did it all begin? Was it some genius' master plan, or did it evolve from sheer necessity?
 
@@ -41,4 +50,5 @@ What we're really seeing is the evolution from Google's one-size-fits-all PageRa
 
 This transformation poses interesting questions for traditional ad-revenue models. Google's entire business is built on us clicking through search results, but if AI provides direct answers with fewer clicks, that model needs rethinking. However, as we've seen throughout internet history, companies adapt - they always have.
 
-The internet won't disappear or become some invisible infrastructure we never touch. Instead, our relationship with it is becoming more intimate and efficient. We'll still browse, discover, and get lost in rabbit holes - because that's half the fun - but we'll also have AI companions that understand our preferences well enough to cut through the noise when we need them to. Think of it as having a really smart mate who knows exactly what you're looking for and can instantly fish it out of the world's messiest filing cabinet.
+The internet won't disappear or become some invisible infrastructure we never touch. Instead, our relationship with it is becoming more intimate and efficient. We'll still browse, discover, and get lost in rabbit holes - because that's half the fun - but we'll also have AI companions that understand our preferences well enough to cut through the noise when we need them to. Think of it as having a really smart mate who knows exactly what you're looking for and can instantly fish it out of the world's messiest filing cabinet. 
+
