@@ -13,6 +13,107 @@ const CONFIG = {
   wordsPerMinute: 250
 };
 
+// Parse Obsidian-style frontmatter or standard YAML frontmatter
+function parseObsidianFrontmatter(content) {
+  // Check for standard YAML frontmatter first
+  if (content.startsWith('---')) {
+    try {
+      const parsed = matter(content);
+      return {
+        frontmatter: parsed.data,
+        content: parsed.content
+      };
+    } catch (error) {
+      console.warn('Failed to parse YAML frontmatter, trying Obsidian format');
+    }
+  }
+  
+  // Parse Obsidian property format
+  const lines = content.split('\n');
+  const frontmatter = {};
+  let contentStartIndex = 0;
+  let inFrontmatter = false;
+  
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+    
+    // Skip empty lines at the start
+    if (!line && !inFrontmatter) continue;
+    
+    // Check for property-style frontmatter
+    if (line.includes(':') && !inFrontmatter) {
+      inFrontmatter = true;
+    }
+    
+    if (inFrontmatter) {
+      // Parse properties
+      if (line.includes(':')) {
+        const [key, ...valueParts] = line.split(':');
+        let value = valueParts.join(':').trim();
+        
+        // Clean up the key
+        const cleanKey = key.trim().toLowerCase();
+        
+        // Handle different property formats
+        if (cleanKey === 'created') {
+          // Convert "August 21st 2025" to "2025-08-21"
+          const dateMatch = value.match(/(\w+)\s+(\d+)\w*\s+(\d+)/);
+          if (dateMatch) {
+            const months = {
+              'january': '01', 'february': '02', 'march': '03', 'april': '04',
+              'may': '05', 'june': '06', 'july': '07', 'august': '08',
+              'september': '09', 'october': '10', 'november': '11', 'december': '12'
+            };
+            const month = months[dateMatch[1].toLowerCase()];
+            const day = dateMatch[2].padStart(2, '0');
+            const year = dateMatch[3];
+            if (month) {
+              frontmatter.date = `${year}-${month}-${day}`;
+            }
+          } else {
+            frontmatter.date = value;
+          }
+        } else if (cleanKey === 'author') {
+          frontmatter.author = value;
+        } else if (cleanKey === 'tags') {
+          // Skip tags line, we'll handle the next line
+          continue;
+        } else if (line.startsWith('  - ') || line.startsWith('- ')) {
+          // Handle tag items (skip for now)
+          continue;
+        } else {
+          // Use the key as-is for other properties
+          frontmatter[cleanKey] = value;
+        }
+      } else if (line.startsWith('#') || (!line.includes(':') && line.length > 0 && !line.startsWith('  -') && !line.startsWith('- '))) {
+        // We've hit the content
+        contentStartIndex = i;
+        break;
+      }
+    } else if (line.startsWith('#')) {
+      // We've hit content without finding frontmatter
+      contentStartIndex = i;
+      break;
+    }
+  }
+  
+  // Extract title from first heading if not in frontmatter
+  const contentLines = lines.slice(contentStartIndex);
+  const content = contentLines.join('\n').trim();
+  
+  if (!frontmatter.title) {
+    const titleMatch = content.match(/^#\s+(.+)$/m);
+    if (titleMatch) {
+      frontmatter.title = titleMatch[1].trim();
+    }
+  }
+  
+  return {
+    frontmatter,
+    content
+  };
+}
+
 // Calculate reading time
 function calculateReadTime(content) {
   const words = content.trim().split(/\s+/).length;
@@ -46,12 +147,13 @@ async function processBlogPost(filePath) {
     // Read markdown file
     const markdownContent = await fs.readFile(filePath, 'utf8');
     
-    // Parse frontmatter and content
-    const { data: frontmatter, content } = matter(markdownContent);
+    // Parse frontmatter and content (handles both YAML and Obsidian formats)
+    const { frontmatter, content } = parseObsidianFrontmatter(markdownContent);
     
     // Validate required frontmatter
     if (!frontmatter.title || !frontmatter.date || !frontmatter.author) {
       console.warn(`Skipping ${filePath}: Missing required frontmatter (title, date, author)`);
+      console.warn('Found frontmatter:', frontmatter);
       return null;
     }
     
