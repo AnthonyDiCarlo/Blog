@@ -2,12 +2,18 @@
 tags:
   - Business
   - Blog
-created: February 21st 2025
-Indexes: 
+created: August 21st 2025
+Indexes:
 Author: Anthony Di Carlo
-Read Time:
+Read Time: 4 Minutes
 ---
-
+```yaml
+---
+title: "Relational Logic"
+date: "August 21st 2025"
+author: "Anthony Di Carlo"
+---
+```
 ---
 # Relational Logic: Why Your Business Data Silos Are Bleeding Money
 
