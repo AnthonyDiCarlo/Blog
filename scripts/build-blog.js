@@ -148,7 +148,7 @@ async function processBlogPost(filePath) {
     const markdownContent = await fs.readFile(filePath, 'utf8');
     
     // Parse frontmatter and content (handles both YAML and Obsidian formats)
-    const { frontmatter, content } = parseObsidianFrontmatter(markdownContent);
+    const { frontmatter, content: blogContent } = parseObsidianFrontmatter(markdownContent);
     
     // Validate required frontmatter
     if (!frontmatter.title || !frontmatter.date || !frontmatter.author) {
