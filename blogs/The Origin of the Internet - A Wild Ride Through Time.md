@@ -16,7 +16,7 @@ author: "Anthony Di Carlo"
 
 
 ---
-# # The Origin of the Internet - A Wild Ride Through Time
+# The Origin of the Internet - A Wild Ride Through Time
 
 Ah, the Internet! The magical place where cat videos thrive, social media rants never end, and you can order a pizza without speaking to a human. But where did it all begin? Was it some genius' master plan, or did it evolve from sheer necessity?
 
