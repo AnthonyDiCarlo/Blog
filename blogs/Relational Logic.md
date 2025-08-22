@@ -2,9 +2,9 @@
 tags:
   - Business
   - Blog
-created: August 21st 2025
-Indexes:
-Author: Anthony Di Carlo
+title:
+date: August 21st 2025
+author: Anthony Di Carlo
 Read Time: 4 Minutes
 ---
 ---
