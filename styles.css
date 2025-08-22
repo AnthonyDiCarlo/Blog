@@ -1,4 +1,173 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+/* Updated styles.css - Add these mobile fixes */
+
+/* Force background and text colors on mobile */
+@media (max-width: 768px) {
+  body {
+    background: linear-gradient(135deg, #000511 0%, #001122 35%, #002244 70%, #000817 100%) fixed !important;
+    color: #ffffff !important;
+    min-height: 100vh !important;
+  }
+
+  /* Ensure stars show on mobile */
+  body::before {
+    background-image:
+            radial-gradient(1px 1px at 180px 120px, rgba(255, 255, 255, 0.6), transparent),
+            radial-gradient(1px 1px at 320px 280px, rgba(255, 255, 255, 0.4), transparent),
+            radial-gradient(1px 1px at 580px 150px, rgba(255, 255, 255, 0.7), transparent),
+            radial-gradient(1px 1px at 120px 350px, rgba(255, 255, 255, 0.5), transparent),
+            radial-gradient(1px 1px at 750px 320px, rgba(255, 255, 255, 0.6), transparent),
+            radial-gradient(1px 1px at 450px 80px, rgba(255, 255, 255, 0.5), transparent),
+            radial-gradient(1px 1px at 680px 240px, rgba(255, 255, 255, 0.4), transparent),
+            radial-gradient(1px 1px at 220px 180px, rgba(255, 255, 255, 0.6), transparent),
+            radial-gradient(1px 1px at 820px 100px, rgba(255, 255, 255, 0.7), transparent),
+            radial-gradient(1px 1px at 90px 250px, rgba(255, 255, 255, 0.5), transparent),
+            radial-gradient(1px 1px at 520px 370px, rgba(255, 255, 255, 0.4), transparent),
+            radial-gradient(1px 1px at 380px 200px, rgba(255, 255, 255, 0.6), transparent) !important;
+    opacity: 1 !important;
+    z-index: -1 !important;
+  }
+
+  .nav-container {
+    padding: 1rem !important;
+  }
+
+  .nav {
+    padding: 0.8rem 1.5rem !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+    text-align: center !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff !important;
+  }
+
+  .nav-brand,
+  .nav-brand h1 {
+    color: #ffffff !important;
+  }
+
+  .nav-links {
+    gap: 1.5rem !important;
+  }
+
+  .nav-link {
+    padding: 0.4rem 0.8rem !important;
+    font-size: 0.9rem !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+
+  .nav-link:hover {
+    color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+  }
+
+  .hero h2 {
+    font-size: 2rem !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+
+  .hero p {
+    color: rgba(255, 255, 255, 0.6) !important;
+  }
+
+  .main-content {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    padding-top: 10rem !important;
+    color: #ffffff !important;
+  }
+
+  .blog-card {
+    background: rgba(255, 255, 255, 0.08) !important;
+    backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    color: #ffffff !important;
+  }
+
+  .blog-card h2 {
+    color: #ffffff !important;
+  }
+
+  .blog-card p {
+    color: rgba(255, 255, 255, 0.6) !important;
+  }
+
+  .blog-card .date {
+    color: rgba(255, 255, 255, 0.5) !important;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    text-align: center !important;
+  }
+
+  .newsletter {
+    backdrop-filter: blur(20px) !important;
+    color: #ffffff !important;
+  }
+
+  .newsletter h3 {
+    color: #ffffff !important;
+  }
+
+  .newsletter p {
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+
+  .social-links {
+    justify-content: center !important;
+    padding: 1.5rem !important;
+    backdrop-filter: blur(20px) !important;
+  }
+
+  .email-form {
+    max-width: 100% !important;
+  }
+
+  .email-input {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff !important;
+  }
+
+  .email-input::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+  }
+
+  .subscribe-btn {
+    background: rgba(255, 255, 255, 0.15) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    color: #ffffff !important;
+  }
+
+  .social-link {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav {
+    padding: 0.6rem 1rem !important;
+  }
+
+  .hero h2 {
+    font-size: 1.8rem !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+
+  .email-form {
+    flex-direction: column !important;
+  }
+
+  .subscribe-btn {
+    width: 100% !important;
+  }
+}
 
 * {
   margin: 0;
@@ -8,8 +177,7 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(135deg, #000511 0%, #001122 35%, #002244 70%, #000817 100%);
-  background-attachment: fixed;
+  background: linear-gradient(135deg, #000511 0%, #001122 35%, #002244 70%, #000817 100%) fixed;
   min-height: 100vh;
   color: #ffffff;
   overflow-x: hidden;
@@ -115,12 +283,9 @@ body::before {
 
 /* Main content */
 .main-content {
-  padding-top: 8rem;
   max-width: 1200px;
   margin: 0 auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-bottom: 4rem;
+  padding: 8rem 2rem 4rem;
 }
 
 .hero {

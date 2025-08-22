@@ -1,4 +1,160 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+/* Updated blog-style.css - Add these mobile fixes */
+
+/* Force background and text colors on mobile for blog pages */
+@media (max-width: 768px) {
+    body {
+        background: linear-gradient(135deg, #000511 0%, #001122 35%, #002244 70%, #000817 100%) fixed !important;
+        color: #ffffff !important;
+        min-height: 100vh !important;
+    }
+
+    /* Ensure stars show on mobile */
+    body::before {
+        background-image:
+                radial-gradient(1px 1px at 180px 120px, rgba(255, 255, 255, 0.6), transparent),
+                radial-gradient(1px 1px at 320px 280px, rgba(255, 255, 255, 0.4), transparent),
+                radial-gradient(1px 1px at 580px 150px, rgba(255, 255, 255, 0.7), transparent),
+                radial-gradient(1px 1px at 120px 350px, rgba(255, 255, 255, 0.5), transparent),
+                radial-gradient(1px 1px at 750px 320px, rgba(255, 255, 255, 0.6), transparent),
+                radial-gradient(1px 1px at 450px 80px, rgba(255, 255, 255, 0.5), transparent),
+                radial-gradient(1px 1px at 680px 240px, rgba(255, 255, 255, 0.4), transparent),
+                radial-gradient(1px 1px at 220px 180px, rgba(255, 255, 255, 0.6), transparent),
+                radial-gradient(1px 1px at 820px 100px, rgba(255, 255, 255, 0.7), transparent),
+                radial-gradient(1px 1px at 90px 250px, rgba(255, 255, 255, 0.5), transparent),
+                radial-gradient(1px 1px at 520px 370px, rgba(255, 255, 255, 0.4), transparent),
+                radial-gradient(1px 1px at 380px 200px, rgba(255, 255, 255, 0.6), transparent) !important;
+        opacity: 1 !important;
+        z-index: -1 !important;
+    }
+
+    .nav-container {
+        padding: 1rem !important;
+    }
+
+    .nav {
+        padding: 0.8rem 1.5rem !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+        text-align: center !important;
+        background: rgba(255, 255, 255, 0.1) !important;
+        backdrop-filter: blur(20px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        color: #ffffff !important;
+    }
+
+    .nav-brand,
+    .nav-brand h1 {
+        color: #ffffff !important;
+    }
+
+    .nav-links {
+        gap: 1.5rem !important;
+    }
+
+    .nav-link {
+        padding: 0.4rem 0.8rem !important;
+        font-size: 0.9rem !important;
+        color: rgba(255, 255, 255, 0.8) !important;
+    }
+
+    .nav-link:hover {
+        color: #ffffff !important;
+        background: rgba(255, 255, 255, 0.1) !important;
+    }
+
+    .main-content {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        padding-top: 10rem !important;
+        color: #ffffff !important;
+    }
+
+    .back-button {
+        background: rgba(255, 255, 255, 0.08) !important;
+        backdrop-filter: blur(20px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.15) !important;
+        color: rgba(255, 255, 255, 0.8) !important;
+    }
+
+    .blog-post {
+        padding: 2rem 1.5rem !important;
+        background: rgba(255, 255, 255, 0.08) !important;
+        backdrop-filter: blur(20px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.15) !important;
+        color: #ffffff !important;
+    }
+
+    .post-title {
+        font-size: 2rem !important;
+        color: #ffffff !important;
+    }
+
+    .post-meta {
+        color: rgba(255, 255, 255, 0.6) !important;
+    }
+
+    .post-date {
+        color: rgba(255, 255, 255, 0.5) !important;
+    }
+
+    .post-content h1,
+    .post-content h2 {
+        font-size: 1.5rem !important;
+        color: #ffffff !important;
+    }
+
+    .post-content h3 {
+        font-size: 1.2rem !important;
+        color: #ffffff !important;
+    }
+
+    .post-content p {
+        color: rgba(255, 255, 255, 0.9) !important;
+    }
+
+    .post-content li {
+        color: rgba(255, 255, 255, 0.9) !important;
+    }
+
+    .post-content strong {
+        color: #ffffff !important;
+    }
+
+    .post-content ul,
+    .post-content ol {
+        color: rgba(255, 255, 255, 0.9) !important;
+    }
+
+    .post-content blockquote {
+        color: rgba(255, 255, 255, 0.8) !important;
+        border-left: 3px solid rgba(255, 255, 255, 0.3) !important;
+    }
+
+    .post-content code {
+        background: rgba(255, 255, 255, 0.1) !important;
+        color: rgba(255, 255, 255, 0.9) !important;
+    }
+
+    .post-content pre {
+        background: rgba(255, 255, 255, 0.1) !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav {
+        padding: 0.6rem 1rem !important;
+    }
+
+    .post-title {
+        font-size: 1.8rem !important;
+        color: #ffffff !important;
+    }
+
+    .blog-post {
+        padding: 1.5rem 1rem !important;
+    }
+}
 
 * {
     margin: 0;
@@ -8,8 +164,7 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background: linear-gradient(135deg, #000511 0%, #001122 35%, #002244 70%, #000817 100%);
-    background-attachment: fixed;
+    background: linear-gradient(135deg, #000511 0%, #001122 35%, #002244 70%, #000817 100%) fixed;
     min-height: 100vh;
     color: #ffffff;
     overflow-x: hidden;
@@ -115,12 +270,9 @@ body::before {
 
 /* Main content */
 .main-content {
-    padding-top: 8rem;
     max-width: 800px;
     margin: 0 auto;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-bottom: 4rem;
+    padding: 8rem 2rem 4rem;
 }
 
 /* Blog post content */
