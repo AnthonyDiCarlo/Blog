@@ -3,17 +3,8 @@ tags:
   - Blog
 created: August 21st 2025
 Author: Anthony Di Carlo
-Read Time:
+Read Time: 4 Minutes
 ---
-
-```yaml
----
-title: "The Origin of the Internet - A Wild Ride Through Time"
-date: "2025-08-21"
-author: "Anthony Di Carlo"
----
-```
-
 
 ---
 # The Origin of the Internet - A Wild Ride Through Time
