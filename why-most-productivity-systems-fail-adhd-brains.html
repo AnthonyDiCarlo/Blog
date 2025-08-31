@@ -15,8 +15,7 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #001122; /* Solid fallback color */
-            background: linear-gradient(135deg, #000511 0%, #001122 35%, #002244 70%, #000817 100%);
+            background-color: #001122;
             background-attachment: fixed;
             min-height: 100vh;
             color: #ffffff;
@@ -25,7 +24,7 @@
         }
 
         /* Subtle animated background stars */
-        body::before {
+        body:before {
             content: '';
             position: fixed;
             top: 0;
