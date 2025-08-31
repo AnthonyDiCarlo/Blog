@@ -4,9 +4,18 @@
 /* Force background and text colors on mobile for blog pages */
 @media (max-width: 768px) {
     body {
-        background: linear-gradient(135deg, #000511 0%, #001122 35%, #002244 70%, #000817 100%) fixed !important;
-        color: #ffffff !important;
-        min-height: 100vh !important;
+        background-attachment: scroll !important; /* Mobile Safari struggles with fixed */
+    }
+}
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: #001122; /* Solid fallback color */
+        background: linear-gradient(135deg, #000511 0%, #001122 35%, #002244 70%, #000817 100%);
+        background-attachment: fixed;
+        min-height: 100vh;
+        color: #ffffff;
+        overflow-x: hidden;
+        position: relative;
     }
 
     /* Ensure stars show on mobile */
