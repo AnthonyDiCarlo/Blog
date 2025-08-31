@@ -1,169 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-/* Updated blog-style.css - Add these mobile fixes */
-
-/* Force background and text colors on mobile for blog pages */
-@media (max-width: 768px) {
-    body {
-        background-attachment: scroll !important; /* Mobile Safari struggles with fixed */
-    }
-}
-    body {
-        font-family: 'Inter', sans-serif;
-        background-color: #001122; /* Solid fallback color */
-        background: linear-gradient(135deg, #000511 0%, #001122 35%, #002244 70%, #000817 100%);
-        background-attachment: fixed;
-        min-height: 100vh;
-        color: #ffffff;
-        overflow-x: hidden;
-        position: relative;
-    }
-
-    /* Ensure stars show on mobile */
-    body::before {
-        background-image:
-                radial-gradient(1px 1px at 180px 120px, rgba(255, 255, 255, 0.6), transparent),
-                radial-gradient(1px 1px at 320px 280px, rgba(255, 255, 255, 0.4), transparent),
-                radial-gradient(1px 1px at 580px 150px, rgba(255, 255, 255, 0.7), transparent),
-                radial-gradient(1px 1px at 120px 350px, rgba(255, 255, 255, 0.5), transparent),
-                radial-gradient(1px 1px at 750px 320px, rgba(255, 255, 255, 0.6), transparent),
-                radial-gradient(1px 1px at 450px 80px, rgba(255, 255, 255, 0.5), transparent),
-                radial-gradient(1px 1px at 680px 240px, rgba(255, 255, 255, 0.4), transparent),
-                radial-gradient(1px 1px at 220px 180px, rgba(255, 255, 255, 0.6), transparent),
-                radial-gradient(1px 1px at 820px 100px, rgba(255, 255, 255, 0.7), transparent),
-                radial-gradient(1px 1px at 90px 250px, rgba(255, 255, 255, 0.5), transparent),
-                radial-gradient(1px 1px at 520px 370px, rgba(255, 255, 255, 0.4), transparent),
-                radial-gradient(1px 1px at 380px 200px, rgba(255, 255, 255, 0.6), transparent) !important;
-        opacity: 1 !important;
-        z-index: -1 !important;
-    }
-
-    .nav-container {
-        padding: 1rem !important;
-    }
-
-    .nav {
-        padding: 0.8rem 1.5rem !important;
-        flex-direction: column !important;
-        gap: 1rem !important;
-        text-align: center !important;
-        background: rgba(255, 255, 255, 0.1) !important;
-        backdrop-filter: blur(20px) !important;
-        border: 1px solid rgba(255, 255, 255, 0.2) !important;
-        color: #ffffff !important;
-    }
-
-    .nav-brand,
-    .nav-brand h1 {
-        color: #ffffff !important;
-    }
-
-    .nav-links {
-        gap: 1.5rem !important;
-    }
-
-    .nav-link {
-        padding: 0.4rem 0.8rem !important;
-        font-size: 0.9rem !important;
-        color: rgba(255, 255, 255, 0.8) !important;
-    }
-
-    .nav-link:hover {
-        color: #ffffff !important;
-        background: rgba(255, 255, 255, 0.1) !important;
-    }
-
-    .main-content {
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
-        padding-top: 10rem !important;
-        color: #ffffff !important;
-    }
-
-    .back-button {
-        background: rgba(255, 255, 255, 0.08) !important;
-        backdrop-filter: blur(20px) !important;
-        border: 1px solid rgba(255, 255, 255, 0.15) !important;
-        color: rgba(255, 255, 255, 0.8) !important;
-    }
-
-    .blog-post {
-        padding: 2rem 1.5rem !important;
-        background: rgba(255, 255, 255, 0.08) !important;
-        backdrop-filter: blur(20px) !important;
-        border: 1px solid rgba(255, 255, 255, 0.15) !important;
-        color: #ffffff !important;
-    }
-
-    .post-title {
-        font-size: 2rem !important;
-        color: #ffffff !important;
-    }
-
-    .post-meta {
-        color: rgba(255, 255, 255, 0.6) !important;
-    }
-
-    .post-date {
-        color: rgba(255, 255, 255, 0.5) !important;
-    }
-
-    .post-content h1,
-    .post-content h2 {
-        font-size: 1.5rem !important;
-        color: #ffffff !important;
-    }
-
-    .post-content h3 {
-        font-size: 1.2rem !important;
-        color: #ffffff !important;
-    }
-
-    .post-content p {
-        color: rgba(255, 255, 255, 0.9) !important;
-    }
-
-    .post-content li {
-        color: rgba(255, 255, 255, 0.9) !important;
-    }
-
-    .post-content strong {
-        color: #ffffff !important;
-    }
-
-    .post-content ul,
-    .post-content ol {
-        color: rgba(255, 255, 255, 0.9) !important;
-    }
-
-    .post-content blockquote {
-        color: rgba(255, 255, 255, 0.8) !important;
-        border-left: 3px solid rgba(255, 255, 255, 0.3) !important;
-    }
-
-    .post-content code {
-        background: rgba(255, 255, 255, 0.1) !important;
-        color: rgba(255, 255, 255, 0.9) !important;
-    }
-
-    .post-content pre {
-        background: rgba(255, 255, 255, 0.1) !important;
-    }
-}
-
-@media (max-width: 480px) {
-    .nav {
-        padding: 0.6rem 1rem !important;
-    }
-
-    .post-title {
-        font-size: 1.8rem !important;
-        color: #ffffff !important;
-    }
-
-    .blog-post {
-        padding: 1.5rem 1rem !important;
-    }
-}
 
 * {
     margin: 0;
@@ -173,7 +8,9 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background: linear-gradient(135deg, #000511 0%, #001122 35%, #002244 70%, #000817 100%) fixed;
+    background-color: #001122; /* Solid fallback color */
+    background: linear-gradient(135deg, #000511 0%, #001122 35%, #002244 70%, #000817 100%);
+    background-attachment: fixed;
     min-height: 100vh;
     color: #ffffff;
     overflow-x: hidden;
@@ -275,6 +112,20 @@ body::before {
     color: #ffffff;
     background: rgba(255, 255, 255, 0.1);
     transform: translateY(-2px);
+}
+
+/* Navigation Fix - Override mobile styles for desktop */
+@media (min-width: 769px) {
+    .nav {
+        flex-direction: row !important;
+        text-align: left !important;
+        justify-content: space-between !important;
+        gap: 0 !important; /* Reset the gap that's being forced by mobile styles */
+    }
+
+    .nav-links {
+        gap: 2rem !important; /* Restore proper gap for menu items */
+    }
 }
 
 /* Main content */
@@ -418,61 +269,263 @@ body::before {
     transform: translateY(-2px);
 }
 
+/* Footer Styles */
+.footer {
+    margin-top: 4rem;
+    padding: 3rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.newsletter {
+    flex: 1;
+    max-width: 400px;
+}
+
+.newsletter h3 {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.newsletter p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.email-form {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.email-input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 0.9rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.email-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.email-input:focus {
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.subscribe-btn {
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    color: #ffffff;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.subscribe-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-1px);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
+    body {
+        background-attachment: scroll !important; /* Mobile Safari struggles with fixed */
+    }
+
     .nav-container {
-        padding: 1rem;
+        padding: 1rem !important;
     }
 
     .nav {
-        padding: 0.8rem 1.5rem;
-        flex-direction: column;
-        gap: 1rem;
-        text-align: center;
+        padding: 0.8rem 1.5rem !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+        text-align: center !important;
+        background: rgba(255, 255, 255, 0.1) !important;
+        backdrop-filter: blur(20px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        color: #ffffff !important;
+    }
+
+    .nav-brand,
+    .nav-brand h1 {
+        color: #ffffff !important;
     }
 
     .nav-links {
-        gap: 1.5rem;
+        gap: 1.5rem !important;
     }
 
     .nav-link {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem !important;
+        font-size: 0.9rem !important;
+        color: rgba(255, 255, 255, 0.8) !important;
+    }
+
+    .nav-link:hover {
+        color: #ffffff !important;
+        background: rgba(255, 255, 255, 0.1) !important;
     }
 
     .main-content {
-        padding-left: 1rem;
-        padding-right: 1rem;
-        padding-top: 10rem;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        padding-top: 10rem !important;
+        color: #ffffff !important;
+    }
+
+    .back-button {
+        background: rgba(255, 255, 255, 0.08) !important;
+        backdrop-filter: blur(20px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.15) !important;
+        color: rgba(255, 255, 255, 0.8) !important;
     }
 
     .blog-post {
-        padding: 2rem 1.5rem;
+        padding: 2rem 1.5rem !important;
+        background: rgba(255, 255, 255, 0.08) !important;
+        backdrop-filter: blur(20px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.15) !important;
+        color: #ffffff !important;
     }
 
     .post-title {
-        font-size: 2rem;
+        font-size: 2rem !important;
+        color: #ffffff !important;
     }
 
+    .post-meta {
+        color: rgba(255, 255, 255, 0.6) !important;
+    }
+
+    .post-date {
+        color: rgba(255, 255, 255, 0.5) !important;
+    }
+
+    .post-content h1,
     .post-content h2 {
-        font-size: 1.5rem;
+        font-size: 1.5rem !important;
+        color: #ffffff !important;
     }
 
     .post-content h3 {
-        font-size: 1.2rem;
+        font-size: 1.2rem !important;
+        color: #ffffff !important;
+    }
+
+    .post-content p {
+        color: rgba(255, 255, 255, 0.9) !important;
+    }
+
+    .post-content li {
+        color: rgba(255, 255, 255, 0.9) !important;
+    }
+
+    .post-content strong {
+        color: #ffffff !important;
+    }
+
+    .post-content ul,
+    .post-content ol {
+        color: rgba(255, 255, 255, 0.9) !important;
+    }
+
+    .post-content blockquote {
+        color: rgba(255, 255, 255, 0.8) !important;
+        border-left: 3px solid rgba(255, 255, 255, 0.3) !important;
+    }
+
+    .post-content code {
+        background: rgba(255, 255, 255, 0.1) !important;
+        color: rgba(255, 255, 255, 0.9) !important;
+    }
+
+    .post-content pre {
+        background: rgba(255, 255, 255, 0.1) !important;
+    }
+
+    /* Mobile responsiveness for footer */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .newsletter {
+        max-width: none;
+    }
+
+    .email-form {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .social-links {
+        justify-content: center;
     }
 }
 
 @media (max-width: 480px) {
     .nav {
-        padding: 0.6rem 1rem;
+        padding: 0.6rem 1rem !important;
     }
 
     .post-title {
-        font-size: 1.8rem;
+        font-size: 1.8rem !important;
+        color: #ffffff !important;
     }
 
     .blog-post {
-        padding: 1.5rem 1rem;
+        padding: 1.5rem 1rem !important;
     }
 }
