@@ -164,7 +164,6 @@ body::before {
   }
 
   .footer-content {
-    grid-template-columns: 1fr !important;
     gap: 2rem !important;
     text-align: center !important;
   }
@@ -183,7 +182,6 @@ body::before {
   }
 
   .social-links {
-    justify-content: center !important;
     padding: 1.5rem !important;
     backdrop-filter: blur(20px) !important;
   }
@@ -213,7 +211,6 @@ body::before {
     border: 1px solid rgba(255, 255, 255, 0.2) !important;
     color: rgba(255, 255, 255, 0.8) !important;
   }
-}
 
 @media (max-width: 480px) {
   .nav {
@@ -426,7 +423,6 @@ body:before {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
-  align-items: center;
 }
 
 .newsletter {
