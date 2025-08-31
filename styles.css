@@ -18,59 +18,116 @@ body {
   position: relative;
 }
 
-  /* Ensure stars show on mobile */
-  body::before {
-    background-image:
-            radial-gradient(1px 1px at 180px 120px, rgba(255, 255, 255, 0.6), transparent),
-            radial-gradient(1px 1px at 320px 280px, rgba(255, 255, 255, 0.4), transparent),
-            radial-gradient(1px 1px at 580px 150px, rgba(255, 255, 255, 0.7), transparent),
-            radial-gradient(1px 1px at 120px 350px, rgba(255, 255, 255, 0.5), transparent),
-            radial-gradient(1px 1px at 750px 320px, rgba(255, 255, 255, 0.6), transparent),
-            radial-gradient(1px 1px at 450px 80px, rgba(255, 255, 255, 0.5), transparent),
-            radial-gradient(1px 1px at 680px 240px, rgba(255, 255, 255, 0.4), transparent),
-            radial-gradient(1px 1px at 220px 180px, rgba(255, 255, 255, 0.6), transparent),
-            radial-gradient(1px 1px at 820px 100px, rgba(255, 255, 255, 0.7), transparent),
-            radial-gradient(1px 1px at 90px 250px, rgba(255, 255, 255, 0.5), transparent),
-            radial-gradient(1px 1px at 520px 370px, rgba(255, 255, 255, 0.4), transparent),
-            radial-gradient(1px 1px at 380px 200px, rgba(255, 255, 255, 0.6), transparent) !important;
-    opacity: 1 !important;
-    z-index: -1 !important;
-  }
+/* Subtle animated background stars */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+          radial-gradient(1px 1px at 180px 120px, rgba(255, 255, 255, 0.6), transparent),
+          radial-gradient(1px 1px at 320px 280px, rgba(255, 255, 255, 0.4), transparent),
+          radial-gradient(1px 1px at 580px 150px, rgba(255, 255, 255, 0.7), transparent),
+          radial-gradient(1px 1px at 120px 350px, rgba(255, 255, 255, 0.5), transparent),
+          radial-gradient(1px 1px at 750px 320px, rgba(255, 255, 255, 0.6), transparent),
+          radial-gradient(1px 1px at 450px 80px, rgba(255, 255, 255, 0.5), transparent),
+          radial-gradient(1px 1px at 680px 240px, rgba(255, 255, 255, 0.4), transparent),
+          radial-gradient(1px 1px at 220px 180px, rgba(255, 255, 255, 0.6), transparent),
+          radial-gradient(1px 1px at 820px 100px, rgba(255, 255, 255, 0.7), transparent),
+          radial-gradient(1px 1px at 90px 250px, rgba(255, 255, 255, 0.5), transparent),
+          radial-gradient(1px 1px at 520px 370px, rgba(255, 255, 255, 0.4), transparent),
+          radial-gradient(1px 1px at 380px 200px, rgba(255, 255, 255, 0.6), transparent);
+  background-repeat: repeat;
+  background-size: 900px 400px;
+  animation: starMove 12s infinite ease-in-out;
+  z-index: -1;
+}
 
-  .nav-container {
-    padding: 1rem !important;
+@keyframes starMove {
+  0%, 100% {
+    opacity: 0.4;
+    transform: translateY(0px) translateX(0px);
   }
+  50% {
+    opacity: 0.8;
+    transform: translateY(-10px) translateX(5px);
+  }
+}
 
+/* Fixed full-width navigation */
+.nav-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1rem 2rem;
+}
+
+.nav {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-brand {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.nav-brand h1 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Navigation Fix - Override mobile styles for desktop */
+@media (min-width: 769px) {
   .nav {
-    padding: 0.8rem 1.5rem !important;
-    flex-direction: column !important;
-    gap: 1rem !important;
-    text-align: center !important;
-    background: rgba(255, 255, 255, 0.1) !important;
-    backdrop-filter: blur(20px) !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    color: #ffffff !important;
-  }
-
-  .nav-brand,
-  .nav-brand h1 {
-    color: #ffffff !important;
+    flex-direction: row !important;
+    text-align: left !important;
+    justify-content: space-between !important;
+    gap: 0 !important; /* Reset the gap that's being forced by mobile styles */
   }
 
   .nav-links {
-    gap: 1.5rem !important;
+    gap: 2rem !important; /* Restore proper gap for menu items */
   }
-
-  .nav-link {
-    padding: 0.4rem 0.8rem !important;
-    font-size: 0.9rem !important;
-    color: rgba(255, 255, 255, 0.8) !important;
-  }
-
-  .nav-link:hover {
-    color: #ffffff !important;
-    background: rgba(255, 255, 255, 0.1) !important;
-  }
+}
 
   .hero h2 {
     font-size: 2rem !important;
