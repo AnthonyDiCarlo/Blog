@@ -6,8 +6,6 @@ date: 24/08/2025
 author: Anthony Di Carlo
 Read Time: 5 Minutes
 ---
-
----
 If you have ADHD, you know this pattern all too well: you discover a brilliant productivity system, implement it religiously for a week, then completely forget it exists. Your phone has seventeen different task apps, your desk is covered in half-used planners, and you still miss important deadlines.
 
 The problem isn't you. It's that most productivity systems are designed for neurotypical brains.
