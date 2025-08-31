@@ -17,7 +17,7 @@ body {
 }
 
 /* Subtle animated background stars */
-body::before {
+body:before {
     content: '';
     position: fixed;
     top: 0;

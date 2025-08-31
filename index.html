@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thinking out Loud - Anthony Di Carlo</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <!-- Fixed Navigation -->
@@ -18,7 +16,7 @@
         <div class="nav-links">
             <a href="#about" class="nav-link">About Me</a>
             <a href="#blog" class="nav-link">Blog</a>
-            <a href="#subscribe" class="nav-link">Subscribe</a>
+            <a href="#subscribe" class="nav-link" onclick="openModal()">Subscribe</a>
         </div>
     </nav>
 </div>
@@ -31,26 +29,26 @@
     </section>
 
     <section class="blog-grid" id="blog">
-            <a href="why-most-productivity-systems-fail-adhd-brains.html" class="blog-card">
-                <h2>Why Most Productivity Systems Fail ADHD Brains</h2>
-                <p>If you have ADHD, you know this pattern all too well: you discover a brilliant productivity system, implement it religiously for a week, then complete...</p>
-                <div class="date">August 24th, 2025</div>
-            </a>
+        <a href="why-most-productivity-systems-fail-adhd-brains.html" class="blog-card">
+            <h2>Why Most Productivity Systems Fail ADHD Brains</h2>
+            <p>If you have ADHD, you know this pattern all too well: you discover a brilliant productivity system, implement it religiously for a week, then complete...</p>
+            <div class="date">August 24th, 2025</div>
+        </a>
 
-            <a href="the-origin-of-the-internet-a-wild-ride-through-time.html" class="blog-card">
-                <h2>The Origin of the Internet - A Wild Ride Through Time</h2>
-                <p>Ah, the Internet! The magical place where cat videos thrive, social media rants never end, and you can order a pizza without speaking to a human. But...</p>
-                <div class="date">August 21st, 2025</div>
-            </a>
+        <a href="the-origin-of-the-internet-a-wild-ride-through-time.html" class="blog-card">
+            <h2>The Origin of the Internet - A Wild Ride Through Time</h2>
+            <p>Ah, the Internet! The magical place where cat videos thrive, social media rants never end, and you can order a pizza without speaking to a human. But...</p>
+            <div class="date">August 21st, 2025</div>
+        </a>
 
-            <a href="relational-logic.html" class="blog-card">
-                <h2>Relational Logic</h2>
-                <p>The $50,000 Customer You Nearly Lost
+        <a href="relational-logic.html" class="blog-card">
+            <h2>Relational Logic</h2>
+            <p>The $50,000 Customer You Nearly Lost
 
-Tom calls your customer service line for the third time this month about delayed deliveries. Your support rep...</p>
-                <div class="date">February 18th, 2025</div>
-            </a>
-        </section>
+                Tom calls your customer service line for the third time this month about delayed deliveries. Your support rep...</p>
+            <div class="date">February 18th, 2025</div>
+        </a>
+    </section>
 </main>
 
 <!-- Footer -->
@@ -65,6 +63,7 @@ Tom calls your customer service line for the third time this month about delayed
                         class="email-input"
                         placeholder="Enter your email address"
                         required
+                        id="quickEmail"
                 >
                 <button type="submit" class="subscribe-btn">Subscribe</button>
             </form>
@@ -88,5 +87,142 @@ Tom calls your customer service line for the third time this month about delayed
         </div>
     </div>
 </footer>
+
+<!-- Subscribe Modal -->
+<div class="modal" id="subscribeModal">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal()" type="button">&times;</button>
+        <h3>Join the Newsletter</h3>
+        <p>Get the latest insights and updates delivered straight to your inbox.</p>
+
+        <div class="success-message" id="successMessage">
+            Thanks for subscribing! Check your email for confirmation.
+        </div>
+
+        <form class="modal-form" id="modalForm">
+            <div class="name-fields">
+                <input
+                        type="text"
+                        placeholder="First name"
+                        required
+                        id="firstName"
+                        name="firstName"
+                >
+                <input
+                        type="text"
+                        placeholder="Last name"
+                        required
+                        id="lastName"
+                        name="lastName"
+                >
+            </div>
+            <input
+                    type="email"
+                    placeholder="Email address"
+                    required
+                    id="modalEmail"
+                    name="email"
+            >
+            <button type="submit" class="modal-subscribe-btn">Subscribe</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    // Modal functionality
+    function openModal(prefillEmail = '') {
+        const modal = document.getElementById('subscribeModal');
+        const emailInput = document.getElementById('modalEmail');
+
+        if (prefillEmail) {
+            emailInput.value = prefillEmail;
+        }
+
+        modal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('subscribeModal');
+        modal.classList.remove('show');
+        document.body.style.overflow = 'auto';
+
+        // Reset form
+        document.getElementById('modalForm').reset();
+        document.getElementById('successMessage').style.display = 'none';
+        document.getElementById('modalForm').style.display = 'block';
+    }
+
+    // Handle quick signup (from footer form)
+    let handleQuickSignup;
+    handleQuickSignup = event => {
+        event.preventDefault();
+        const email = document.getElementById('quickEmail').value;
+
+        // Open modal with email pre-filled
+        openModal(email);
+
+        // Clear the quick form
+        document.getElementById('quickEmail').value = '';
+    };
+
+    // Handle Mailerlite signup
+    let handleMailerliteSignup;
+    handleMailerliteSignup = async event => {
+        event.preventDefault();
+
+        const firstName = document.getElementById('firstName').value;
+        const lastName = document.getElementById('lastName').value;
+        const email = document.getElementById('modalEmail').value;
+
+        try {
+            const response = await fetch('https://api.mailerlite.com/api/v2/groups/164245087043192562/subscribers', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-MailerLite-ApiKey': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiN2MxYzdhNDBiZTM1YWMzZjc0ODg3MzhhZGQ3ZDQwNmEyMDFkMjg4Mzc2ODVmMGFlNjE2OGU4ZjJjODFjMWRmZmE5YTI4MDczNWYyYzkyZWYiLCJpYXQiOjE3NTY2MzYzNzIuMTExMDc5LCJuYmYiOjE3NTY2MzYzNzIuMTExMDgxLCJleHAiOjQ5MTIzMDk5NzIuMTA2OTQ5LCJzdWIiOiIxNzgzMzU5Iiwic2NvcGVzIjpbXX0.bk2EDDOVRi2FCx3oR8BiLpk6fSyKxTQjN6niYqOGA3X8ED-9zoaPN2sAS0EHvHW9yPl8VQQTua2-H4n6Vn2exxvWKBwUeW3rEzn0ncOJ_6E4oPyb-TOF2Badmy72doRX8boGWiMc7FzzeahhCjjy6Ipegm8t51WIn_khiJivJgyUHSmcePugkMy3iqdeDqUiu0AGMJe8gUcsXo51S8bW20bObspUJWkMfB1NvQaHc6ciW8Ik81kG3MKBXQXJXcYINHPf140fiho3xwIlibDU9HTBkc1ZP2QXF4STl6fb-3B2zBV1TIuI6uCFY9nxXD1hp6NyaWFLu9rmS-jRzaR315EZiF-KTZkP8yx5ZO_6O-qPwscv3z7ik_inUz3uoOJX87ETx7EG3e-kmGyJs5egOXTmP7BWDkOzZwMDxqshe0o2r2YATghmI6Mf9J7afkmDoLsK8mgGO67q0zihyeeybwpmp30z6fbr5TIZS1aO7PBNJSRQTWW9C9EmOSEtNr9YWbe-OIHdjR-rZiQ5MywkqsoLUzApST5VZ51bmH5d8VvfwlMySeqqUqmInFn_2OVWEhVPYh4-a1ewURpyIm4CMfBgqpTqJGHYrOyO5PcUkKvRKjwkXGGHDvG2FgqJ2IaAlin5zsMWKCBpecrhjsI0QlnamdbF-bo1CwveWDWowJk'
+                },
+                body: JSON.stringify({
+                    email: email,
+                    name: `${firstName} ${lastName}`,
+                    fields: {
+                        first_name: firstName,
+                        last_name: lastName
+                    }
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error('Subscription failed');
+            } else {
+                // Show success message
+                document.getElementById('modalForm').style.display = 'none';
+                document.getElementById('successMessage').style.display = 'block';
+
+                // Close modal after 2 seconds
+                setTimeout(() => {
+                    closeModal();
+                }, 2000);
+            }
+        } catch (error) {
+            alert('Sorry, there was an error. Please try again.');
+            console.error('Subscription error:', error);
+        }
+    };
+
+    // Close modal when clicking outside
+    document.getElementById('subscribeModal').addEventListener('click', function(event) {
+        if (event.target === this) {
+            closeModal();
+        }
+    });
+
+    // Close modal with escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeModal();
+        }
+    });
+</script>
 </body>
 </html>
