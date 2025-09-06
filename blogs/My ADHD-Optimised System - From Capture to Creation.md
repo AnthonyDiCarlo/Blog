@@ -2,7 +2,7 @@
 tags:
   - Blog
 title: My ADHD-Optimised System - From Capture to Creation
-date: 21/08/2025
+date: 07/09/2025
 author: Anthony Di Carlo
 Read Time: 6 Minutes
 ---
