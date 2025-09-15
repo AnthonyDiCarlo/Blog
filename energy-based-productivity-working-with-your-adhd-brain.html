@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy-Based Productivity - Working With Your ADHD Brain - Thinking out Loud</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #001122; /* Solid fallback color */
+            background: linear-gradient(135deg, #000511 0%, #001122 35%, #002244 70%, #000817 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            color: #ffffff;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Subtle animated background stars */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                    radial-gradient(1px 1px at 180px 120px, rgba(255, 255, 255, 0.6), transparent),
+                    radial-gradient(1px 1px at 320px 280px, rgba(255, 255, 255, 0.4), transparent),
+                    radial-gradient(1px 1px at 580px 150px, rgba(255, 255, 255, 0.7), transparent),
+                    radial-gradient(1px 1px at 120px 350px, rgba(255, 255, 255, 0.5), transparent),
+                    radial-gradient(1px 1px at 750px 320px, rgba(255, 255, 255, 0.6), transparent),
+                    radial-gradient(1px 1px at 450px 80px, rgba(255, 255, 255, 0.5), transparent),
+                    radial-gradient(1px 1px at 680px 240px, rgba(255, 255, 255, 0.4), transparent),
+                    radial-gradient(1px 1px at 220px 180px, rgba(255, 255, 255, 0.6), transparent),
+                    radial-gradient(1px 1px at 820px 100px, rgba(255, 255, 255, 0.7), transparent),
+                    radial-gradient(1px 1px at 90px 250px, rgba(255, 255, 255, 0.5), transparent),
+                    radial-gradient(1px 1px at 520px 370px, rgba(255, 255, 255, 0.4), transparent),
+                    radial-gradient(1px 1px at 380px 200px, rgba(255, 255, 255, 0.6), transparent);
+            background-repeat: repeat;
+            background-size: 900px 400px;
+            animation: starMove 12s infinite ease-in-out;
+            z-index: -1;
+        }
+
+        @keyframes starMove {
+            0%, 100% {
+                opacity: 0.4;
+                transform: translateY(0px) translateX(0px);
+            }
+            50% {
+                opacity: 0.8;
+                transform: translateY(-10px) translateX(5px);
+            }
+        }
+
+        /* Fixed full-width navigation */
+        .nav-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+        }
+
+        .nav {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-brand {
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .nav-brand h1 {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+        }
+
+        .nav-link:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Main content */
+        .main-content {
+            padding-top: 8rem;
+            max-width: 800px;
+            margin: 0 auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            padding-bottom: 4rem;
+        }
+
+        /* Blog post content */
+        .blog-post {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .post-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .post-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            line-height: 1.2;
+        }
+
+        .post-meta {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .post-date {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.85rem;
+        }
+
+        /* Typography */
+        .post-content h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin: 2.5rem 0 1.5rem 0;
+            color: #ffffff;
+        }
+
+        .post-content h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem 0;
+            color: #ffffff;
+        }
+
+        .post-content p {
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-align: justify;
+        }
+
+        .post-content ul,
+        .post-content ol {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+
+        .post-content li {
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 0.5rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .post-content strong {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .post-content strong:hover {
+            color: #FF5C02;
+            transition: color 0.3s ease;
+        }
+
+        .post-content blockquote {
+            border-left: 3px solid rgba(255, 255, 255, 0.3);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .post-content code {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        .post-content pre {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+
+        .post-content pre code {
+            background: none;
+            padding: 0;
+        }
+
+        /* Back button */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 1rem;
+            }
+
+            .nav {
+                padding: 0.8rem 1.5rem;
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+            }
+
+            .nav-link {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
+            }
+
+            .main-content {
+                padding-left: 1rem;
+                padding-right: 1rem;
+                padding-top: 10rem;
+            }
+
+            .blog-post {
+                padding: 2rem 1.5rem;
+            }
+
+            .post-title {
+                font-size: 2rem;
+            }
+
+            .post-content h2 {
+                font-size: 1.5rem;
+            }
+
+            .post-content h3 {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav {
+                padding: 0.6rem 1rem;
+            }
+
+            .post-title {
+                font-size: 1.8rem;
+            }
+
+            .blog-post {
+                padding: 1.5rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Fixed Navigation -->
+<div class="nav-container">
+    <nav class="nav">
+        <a href="index.html" class="nav-brand">
+            <h1>Thinking out Loud</h1>
+        </a>
+        <div class="nav-links">
+            <a href="index.html#about" class="nav-link">About Me</a>
+            <a href="index.html#blog" class="nav-link">Blog</a>
+            <a href="index.html#subscribe" class="nav-link">Subscribe</a>
+        </div>
+    </nav>
+</div>
+
+<!-- Main Content -->
+<main class="main-content">
+    <a href="index.html" class="back-button">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.42-1.41L7.83 13H20v-2z"/>
+        </svg>
+        Back to Blog
+    </a>
+
+    <article class="blog-post">
+        <header class="post-header">
+            <h1 class="post-title">Energy-Based Productivity - Working With Your ADHD Brain</h1>
+            <div class="post-meta">by Anthony Di Carlo • 6 min read</div>
+            <div class="post-date">September 16th, 2025</div>
+        </header>
+
+        <div class="post-content">
+            <p>Traditional productivity advice says &quot;discipline beats motivation&quot; and &quot;consistency is king.&quot; For ADHD brains, this is not just wrong - it&#39;s counterproductive. Fighting your natural energy patterns is like swimming upstream in a river. You&#39;ll exhaust yourself and make little progress.</p>
+<p>The breakthrough insight: <strong>energy-based productivity works with your ADHD brain instead of against it</strong>.</p>
+<p>After 18 months of refining this approach, I can consistently manage multiple businesses, creative projects, and personal goals without burning out. The secret isn&#39;t more discipline - it&#39;s smarter alignment.</p>
+<h2>Understanding Your Energy Architecture</h2>
+<p>ADHD brains have three distinct energy patterns that most productivity systems completely ignore:</p>
+<h3>Pattern 1: The Clarity Curve</h3>
+<p>Your cognitive clarity follows a predictable daily pattern, even if it doesn&#39;t match &quot;normal&quot; productivity hours.</p>
+<p><strong>Morning Clarity (My 6:30-8:00am):</strong> Executive function is strongest. Best time for decision-making, planning, and processing complex information.</p>
+<p><strong>Afternoon Sustainability (My 2:00-4:00pm):</strong> Consistent medium-level focus. Perfect for routine tasks, communications, and maintenance work.</p>
+<p><strong>Evening Creativity (My 8:00-10:00pm):</strong> Different type of focus - more associative, creative, big-picture thinking. Not good for admin, excellent for ideation.</p>
+<p><strong>Your pattern will be different.</strong> The key is mapping your actual energy, not forcing yourself into societal &quot;productive hours.&quot;</p>
+<h3>Pattern 2: Hyperfocus vs Scattered Days</h3>
+<p>ADHD brains don&#39;t maintain consistent daily productivity. Instead, we alternate between:</p>
+<p><strong>Hyperfocus States:</strong> 2-8 hour periods of intense concentration. These are gold - but you can&#39;t force them to happen on demand.</p>
+<p><strong>Scattered Days:</strong> Multiple short bursts with frequent attention switches. Traditional productivity advice calls this procrastination. I call it a different working mode.</p>
+<p>The secret is having systems that work for both states, not fighting the natural rhythm.</p>
+<h3>Pattern 3: Interest-Driven Attention</h3>
+<p>ADHD attention follows interest and novelty more than importance or urgency. This isn&#39;t a character flaw - it&#39;s how our brains are wired.</p>
+<p><strong>High interest tasks:</strong> Natural hyperfocus, time distortion, effortless deep work.</p>
+<p><strong>Low interest tasks:</strong> Require external structure, artificial deadlines, or energy management strategies.</p>
+<p>The goal isn&#39;t to make boring tasks interesting. It&#39;s to structure boring tasks for your low-interest processing modes.</p>
+<h2>Energy-Based Strategies That Actually Work</h2>
+<h3>Strategy 1: Energy Mapping Over Time Blocking</h3>
+<p>Traditional time blocking assumes consistent energy. Energy mapping works with your actual patterns.</p>
+<p><strong>How to energy map:</strong></p>
+<ol>
+<li>Track your energy patterns for two weeks (simple 1-10 scale, three times daily)</li>
+<li>Notice patterns - when are you naturally focused? When do you crash?</li>
+<li>Plan tasks based on energy requirements, not arbitrary schedules</li>
+</ol>
+<p><strong>My energy allocation:</strong></p>
+<ul>
+<li><strong>High energy (mornings):</strong> Complex problem-solving, difficult conversations, strategic planning</li>
+<li><strong>Medium energy (afternoons):</strong> Email processing, routine tasks, team communications</li>
+<li><strong>Low energy (evenings):</strong> Reading, organising, content curation, passive learning</li>
+</ul>
+<p>This matches tasks to natural capacity instead of forcing capacity to match arbitrary schedules.</p>
+<h3>Strategy 2: Hyperfocus Containers</h3>
+<p>When hyperfocus kicks in, most people waste it on shallow work because they weren&#39;t prepared. I create &quot;hyperfocus containers&quot; - pre-planned deep work sessions ready to activate.</p>
+<p><strong>Weekend Deep Work Setup:</strong></p>
+<ul>
+<li><strong>Preparation:</strong> All resources gathered in advance, clear scope defined, phone in airplane mode</li>
+<li><strong>Duration:</strong> 2-4 hour blocks with natural stopping points</li>
+<li><strong>Environment:</strong> Noise-cancelling headphones, coffee prepared, all distractions eliminated</li>
+<li><strong>Content:</strong> Most challenging creative work - blog writing, strategic planning, complex problem-solving</li>
+</ul>
+<p><strong>Weekday Hyperfocus Triggers:</strong></p>
+<ul>
+<li><strong>25-minute Pomodoro bridges</strong> between meetings for momentum maintenance</li>
+<li><strong>Lunch-hour focused blocks</strong> for personal project progression</li>
+<li><strong>Early morning windows</strong> before the workday chaos begins</li>
+</ul>
+<p>The key is recognising when hyperfocus is available and having meaningful work ready to capture it.</p>
+<h3>Strategy 3: Context Switching Buffers</h3>
+<p>ADHD brains struggle with transitions between different types of work. I build 15-minute buffers between contexts to prevent the jarring switches that derail focus.</p>
+<p><strong>Professional to Personal Transition (4:30-4:45pm):</strong></p>
+<ul>
+<li>Close all work applications and browser tabs</li>
+<li>5-minute walk or breathing exercise</li>
+<li>Review personal priorities for the evening</li>
+<li>Physical transition (change clothes, move to different workspace)</li>
+</ul>
+<p><strong>Creative to Administrative Switch:</strong></p>
+<ul>
+<li>Save all creative work in progress</li>
+<li>Set timer for administrative block</li>
+<li>Use different physical location or setup</li>
+<li>Brain dump any creative thoughts before switching</li>
+</ul>
+<p>These buffers prevent the mental residue from one context contaminating the next.</p>
+<h3>Strategy 4: Dopamine Trigger Points</h3>
+<p>ADHD brains need regular dopamine hits to maintain motivation. I build celebration points into the system rather than waiting for major milestones.</p>
+<p><strong>Daily Wins:</strong></p>
+<ul>
+<li>Visual task completion (the checkbox dopamine hit is real)</li>
+<li>Progress photos or social media shares of work in progress</li>
+<li>Brief celebration ritual for completing difficult tasks</li>
+</ul>
+<p><strong>Weekly Progress Reviews:</strong></p>
+<ul>
+<li>Archive completed items with intentional recognition</li>
+<li>Share wins on social media for external validation</li>
+<li>Plan next week&#39;s priorities as positive forward momentum</li>
+</ul>
+<p><strong>Content Creation as Reward:</strong> After completing boring administrative work, I &quot;reward&quot; myself with creative content creation. This flips the normal productivity script - instead of creativity being procrastination, it becomes the incentive for getting through necessary tasks.</p>
+<h3>Strategy 5: The Pomodoro Bridge Technique</h3>
+<p>During busy weekdays, I use Pomodoro timers not just for focus, but as &quot;bridges&quot; between professional responsibilities and personal projects.</p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>25-minute creative writing session between meetings</li>
+<li>15-minute personal project work during lunch</li>
+<li>20-minute content planning before dinner</li>
+</ul>
+<p>These micro-sessions keep passion projects moving forward without overwhelming the main work schedule. The timer creates artificial urgency that engages ADHD focus while providing clear boundaries.</p>
+<h2>Building Your Own Energy-Based System</h2>
+<p>Ready to work with your brain instead of against it? Start here:</p>
+<h3>Week 1: Energy Archaeology</h3>
+<p><strong>Track your natural patterns:</strong></p>
+<ul>
+<li>Set three daily reminders (morning, afternoon, evening)</li>
+<li>Rate your mental energy and focus quality (1-10 scale)</li>
+<li>Note what type of work feels effortless vs difficult at different times</li>
+<li>Track for 7-10 days to see patterns</li>
+</ul>
+<p><strong>Don&#39;t change anything yet</strong> - just observe your natural rhythms.</p>
+<h3>Week 2: Single Energy Match</h3>
+<p><strong>Choose one energy match and implement it:</strong></p>
+<ul>
+<li>If you&#39;re sharpest in the morning, protect that time for your most important work</li>
+<li>If afternoons are scattered, use them for routine tasks only</li>
+<li>If evenings are creative, plan ideation or content creation then</li>
+</ul>
+<p><strong>Test one energy alignment</strong> before adding complexity.</p>
+<h3>Week 3: Add Hyperfocus Preparation</h3>
+<p><strong>Create one hyperfocus container:</strong></p>
+<ul>
+<li>Choose a regular 2-3 hour window (weekend mornings work well)</li>
+<li>Prepare everything in advance - tools, resources, clear objectives</li>
+<li>Eliminate all distractions and interruption possibilities</li>
+<li>Use this time for your most challenging or creative work</li>
+</ul>
+<h3>Week 4: Build Processing Anchors</h3>
+<p><strong>Add daily processing routine:</strong></p>
+<ul>
+<li>Choose an existing habit (morning coffee, lunch break, evening routine)</li>
+<li>Attach 5-minute system maintenance to this anchor</li>
+<li>Empty capture points, review priorities, plan next actions</li>
+<li>Keep it simple and tied to something you never skip</li>
+</ul>
+<h3>Principles for Sustainable Growth</h3>
+<p><strong>Start simple, add complexity gradually:</strong> Basic energy matching beats elaborate systems you abandon.</p>
+<p><strong>Work with patterns, not against them:</strong> Your ADHD isn&#39;t broken - it just needs the right framework.</p>
+<p><strong>Energy over discipline:</strong> Align tasks with natural capacity rather than forcing capacity to match arbitrary schedules.</p>
+<p><strong>Progress over perfection:</strong> The system should evolve with you, not remain static.</p>
+<p><strong>External structure creates internal clarity:</strong> Build systems that pull you back in, don&#39;t wait for you to remember them.</p>
+<h2>The Compound Effect</h2>
+<p>After 18 months of energy-based productivity, the results compound in unexpected ways:</p>
+<p><strong>Professional impact:</strong> Managing complex project portfolios without dropped tasks, improved client relationships, launching startup whilst maintaining full-time performance.</p>
+<p><strong>Creative consistency:</strong> Regular content creation across platforms, published complex analyses, sustainable creative practice alongside demanding work.</p>
+<p><strong>Personal balance:</strong> Multiple life domains managed without sacrificing health, relationships, or hobbies.</p>
+<p><strong>Reduced stress:</strong> Eliminated the constant anxiety of feeling behind or forgetting important tasks.</p>
+<p>The best part? It gets easier over time. Energy-based systems build on themselves - each successful energy match teaches you more about your patterns, making future decisions easier and more automatic.</p>
+<h2>Your ADHD Brain Is Not Broken</h2>
+<p>Traditional productivity culture treats ADHD symptoms as character flaws to overcome. Energy-based productivity treats them as natural patterns to optimise around.</p>
+<p>Your hyperfocus isn&#39;t a liability - it&#39;s a superpower when properly channelled.</p>
+<p>Your scattered attention isn&#39;t procrastination - it&#39;s a different processing mode that requires different tools.</p>
+<p>Your interest-driven motivation isn&#39;t weakness - it&#39;s an opportunity to align challenging work with natural energy patterns.</p>
+<p>The goal isn&#39;t to become neurotypical. It&#39;s to build systems that let your ADHD brain thrive while still meeting your professional and personal objectives.</p>
+<p>Start with energy archaeology this week. Map your natural patterns. Then begin the gradual process of aligning your most important work with your strongest energy.</p>
+<p>Your productivity system should serve your brain, not the other way around.</p>
+<p><em>This concludes the ADHD-Optimised Productivity series. Questions or insights? Share your energy patterns and system experiments - I&#39;d love to hear what works for your unique brain.</em></p>
+
+        </div>
+    </article>
+</main>
+</body>
+</html>
